@@ -7,17 +7,17 @@ module.exports = {
       {
         title: 'Tarea numero 1',
         isComplete: false,
-        user: 2
+        userid: 2
       },
       {
         title: 'Tarea numero 2',
         isComplete: false,
-        user: 3
+        userid: 3
       },
       {
         title: 'Tarea numero 3',
         isComplete: false,
-        user: 2
+        userid: 2
       }
     ], {});
   },

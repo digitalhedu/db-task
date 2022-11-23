@@ -20,7 +20,7 @@ module.exports = {
         allowNull: false,
         defaultValue: false,
       },
-      user:{
+      userid:{
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
