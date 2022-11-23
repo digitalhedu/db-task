@@ -2,14 +2,13 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('tasks', { 
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('tasks', {
       id: {
         type: Sequelize.BIGINT,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-
       },
       title: {
         type: Sequelize.STRING,
@@ -20,18 +19,18 @@ module.exports = {
         allowNull: false,
         defaultValue: false,
       },
-      userid:{
-        type: Sequelize.INTEGER,
+      userId: {
+        type: Sequelize.BIGINT,
         allowNull: false,
         references: {
-          model: 'users',
-          key: 'id',
+          model: "users",
+          key: "id"
         }
       }
     });
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('tasks');
   }
 };
