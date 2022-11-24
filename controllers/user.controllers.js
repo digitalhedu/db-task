@@ -1,4 +1,4 @@
-const user = require("../database/models/User");
+const { user } = require("../database/models/index");
 const validator = require("express-validator");
 const bcrypt = require("bcrypt");
 const { validationResult } = validator;
@@ -9,20 +9,20 @@ methods.access = async (req, res) => {
   let errors = validationResult(req);
   let hasErrors = !errors.isEmpty();
   if (hasErrors) {
-    return res.send(errors.mapped());
+    return res.render("login", { errors: errors.mapped(), data: req.body });
   }
   let result = await user.findOne({ email: req.body.email });
   req.session.user = result;
   if (req.body.remember) {
     res.cookie("user", result.email, { maxAge: 1000 * 60 * 60 * 24 });
   }
-  return res.send("access");
+  return res.redirect("/list");
 };
 methods.save = async (req, res) => {
   let errors = validationResult(req);
   let hasErrors = !errors.isEmpty();
   if (hasErrors) {
-    return res.send(errors.mapped());
+    return res.render("register", { errors: errors.mapped(), data: req.body });
   }
   req.body.password = bcrypt.hashSync(req.body.password, 10);
   req.body.isAdmin = String(req.body.email).includes("@admin");

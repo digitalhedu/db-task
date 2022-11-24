@@ -1,5 +1,5 @@
-module.exports = (Sequelize, DataTypes)=>{
-  let alias = "user"
+module.exports = (Sequelize, DataTypes) => {
+  let alias = "user";
   let columns = {
     id: {
       type: DataTypes.BIGINT,
@@ -21,22 +21,23 @@ module.exports = (Sequelize, DataTypes)=>{
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    isAdmin:{
+    isAdmin: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: false
-    }
-  }
+      defaultValue: false,
+    },
+  };
   let options = {
     underscored: false,
     timestamps: false,
-  }
-  let User = Sequelize.define(alias, columns, options)
+  };
+  let User = Sequelize.define(alias, columns, options);
 
-  User.associate = function(models) {
-    User.hasMany(models.task,{
-      foreignKey: 'userid',
-      as: 'tasks',
-    })
-  }
-}
+  User.associate = function (models) {
+    User.hasMany(models.task, {
+      foreignKey: "userid",
+      as: "tasks",
+    });
+  };
+  return User;
+};

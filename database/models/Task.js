@@ -16,21 +16,22 @@ module.exports = (Sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: false,
     },
-    userid:{
+    userid: {
       type: DataTypes.INTEGER,
-      allowNull: false
-    }
-  }
+      allowNull: false,
+    },
+  };
   let options = {
     underscored: false,
     timestamps: false,
-  }
-  let Task = Sequelize.define(alias, columns, options)
+  };
+  let Task = Sequelize.define(alias, columns, options);
 
-  Task.associate = function(models) {
-    Task.belongsTo(models.user,{
-      foreignKey:'userid',
-      as:'user',
-    })
-  }
-}
+  Task.associate = function (models) {
+    Task.belongsTo(models.user, {
+      foreignKey: "userid",
+      as: "user",
+    });
+  };
+  return Task;
+};
