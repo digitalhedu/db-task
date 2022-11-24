@@ -15,7 +15,42 @@ module.exports = {
                 title: 'Tarea numero 3',
                 isComplete: false,
                 userId: 2
-            }
+            },
+            {
+                title: 'Tarea numero 4',
+                isComplete: false,
+                userId: 3
+            },
+            {
+                title: 'Tarea numero 5',
+                isComplete: true,
+                userId: 2
+            },
+            {
+                title: 'Tarea numero 6',
+                isComplete: false,
+                userId: 3
+            },
+            {
+                title: 'Tarea numero 7',
+                isComplete: false,
+                userId: 2
+            },
+            {
+                title: 'Tarea numero 8',
+                isComplete: true,
+                userId: 3
+            },
+            {
+                title: 'Tarea numero 9',
+                isComplete: false,
+                userId: 2
+            },
+            {
+                title: 'Tarea numero 10',
+                isComplete: true,
+                userId: 3
+            },
         ], {});
     },
 
