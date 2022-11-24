@@ -15,13 +15,17 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
+const method = require("method-override");
+
+app.use(method("m"));
+
 const cookie = require("cookie-parser");
 
 app.use(cookie("something"));
 
 const session = require("express-session");
 
-app.use(session({ resave: false, saveUninitialized: true, secret: "1234" }));
+app.use(session({ resave: false, saveUninitialized: true, secret: "dh task" }));
 
 //  Aplication Middleware Custom
 
@@ -30,3 +34,5 @@ app.use(require("./middlewares/user"));
 // Aplication Routes
 
 app.use(require("./routes/user.routes"));
+
+app.use("/tasks", require("./routes/task.routes"));
