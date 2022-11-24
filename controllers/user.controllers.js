@@ -11,12 +11,12 @@ methods.access = async (req, res) => {
   if (hasErrors) {
     return res.render("login", { errors: errors.mapped(), data: req.body });
   }
-  let result = await user.findOne({ email: req.body.email });
+  let result = await user.findOne({ where: { email: req.body.email } });
   req.session.user = result;
   if (req.body.remember) {
     res.cookie("user", result.email, { maxAge: 1000 * 60 * 60 * 24 });
   }
-  return res.redirect("/list");
+  return res.redirect("/tasks");
 };
 methods.save = async (req, res) => {
   let errors = validationResult(req);
@@ -32,4 +32,9 @@ methods.save = async (req, res) => {
   return res.redirect("/");
 };
 
+methods.logout = (req, res) => {
+  req.session.destroy();
+  res.cookie("user", null, { maxAge: -1 });
+  return res.redirect("/");
+};
 module.exports = methods;
