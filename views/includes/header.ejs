@@ -2,9 +2,11 @@
   <h1>DH Task</h1>
   <nav>
     <% if (user && user.isAdmin) { %>
-    <a href="/new">new</a>
+    <a href="/tasks">list</a>
+    <a href="/tasks/new">new</a>
     <a href="/logout">logout</a>
     <% } else if (user) { %>
+    <a href="/tasks">list</a>
     <a href="/logout">logout</a>
     <% } else { %>
     <a href="/">login</a>
