@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./includes/head") %>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <%- include("./includes/header") %>
+    <main>
+      <form action="/access" method="post">
+        <fieldset>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" value="<%= locals.errors
+          && !errors.email ? data.email: "" %>"> <% if (locals.errors &&
+          errors.email) { %>
+          <span class="error"> <%= locals.errors.email.msg %> </span>
+          <% } %>
+        </fieldset>
+        <fieldset>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+          <% if (locals.errors && errors.password) { %>
+          <span class="error"> <%= locals.errors.password.msg %> </span>
+          <% } %>
+        </fieldset>
+        <fieldset>
+          <label for="remember">remember</label>
+          <input type="checkbox" name="remember" id="remember" />
+        </fieldset>
+        <button type="submit">Access</button>
+      </form>
+      <nav>
+        <a href="/register">Not a member</a>
+      </nav>
+    </main>
+  </body>
+</html>
