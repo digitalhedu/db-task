@@ -10,6 +10,8 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 
 // Aplication Middleware
+const path = require("path");
+app.use(express.static(path.resolve(__dirname, "public")));
 
 app.use(express.json());
 

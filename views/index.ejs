@@ -11,7 +11,7 @@
         <% if (tasks.length > 0) { %>
         <h2>List of Task</h2>
         <% tasks.forEach(task => { %> <% if (!task.isComplete) { %>
-        <article class="inconplete">
+        <article class="incomplete">
           <h2><%= task.title %></h2>
           <p>
             Assign: <%= task.user.username %> <img src="<%= task.user.avatar ?

@@ -1,0 +1,109 @@
+@import url("./header.css");
+
+#tasks {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: space-around;
+}
+#tasks > h2 {
+  flex-basis: 100%;
+  border-bottom: 0.2rem solid;
+  padding: 0.2rem 1rem;
+  text-transform: uppercase;
+  color: rgb(240, 188, 24);
+}
+
+#tasks article {
+  min-height: 5vh;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  background-color: rgb(240, 240, 240);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+#tasks article h2 {
+  flex-basis: 100%;
+}
+#tasks article img {
+  height: 100%;
+  object-fit: contain;
+}
+#tasks article p {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+#tasks article.incomplete h2 {
+  color: rgb(211, 34, 58);
+  border-bottom: 0.2rem solid rgb(211, 34, 58);
+}
+
+#tasks article.complete h2 {
+  color: rgb(94, 94, 152);
+  border-bottom: 0.2rem solid rgb(94, 94, 152);
+}
+
+#tasks article form {
+  position: absolute;
+  z-index: 1;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+#tasks article form button {
+  border: none;
+  outline: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+#tasks article form[action="/tasks/edit"] {
+  transform: translateX(-2rem);
+}
+
+#tasks article form[action="/tasks/edit"] button {
+  background-color: rgb(240, 188, 24);
+  color: rgb(24, 24, 24);
+}
+
+#tasks article form[action="/tasks/remove?m=DELETE"] button {
+  background-color: rgb(211, 34, 58);
+  color: rgb(248, 248, 248);
+}
+
+#tasks article form[action="/tasks/change?m=PUT"] button {
+  background-color: rgb(240, 188, 24);
+  color: rgb(24, 24, 24);
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#pagination a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background-color: rgb(94, 94, 152);
+  color: rgb(240, 240, 240);
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+}

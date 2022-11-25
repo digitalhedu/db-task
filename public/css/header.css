@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0px;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+}
+body {
+  font-family: "Archivo", sans-serif;
+  font-size: 1rem;
+}
+header {
+  display: flex;
+  width: 100vw;
+  min-height: 10vh;
+  flex-flow: row wrap;
+  background-color: rgb(136, 136, 184);
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+header nav {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+header nav a {
+  text-transform: uppercase;
+  color: rgb(248, 248, 248);
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+  flex: 1 0 auto;
+  padding: 0.5rem 1.2rem;
+  text-align: center;
+  font-weight: 300;
+}
+header h1 {
+  align-self: center;
+  color: rgb(240, 188, 24);
+  text-transform: uppercase;
+  text-shadow: 0.2rem 0rem hsl(240, 24%, 48%);
+}
+header nav a:hover {
+  background-color: hsl(240, 24%, 48%);
+  color: rgb(240, 188, 24);
+  transition: all 300ms ease-in-out;
+  font-weight: 700;
+}
