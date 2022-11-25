@@ -15,7 +15,7 @@
           <h2><%= task.title %></h2>
           <p>
             Assign: <%= task.user.username %> <img src="<%= task.user.avatar ?
-            "/upload/"+task.user.avatar:"/assets/avatar.png" %>" alt="Avatar for
+            "/avatar/"+task.user.avatar:"/assets/avatar.png" %>" alt="Avatar for
             user <%= task.user.username %>">
           </p>
           <% if (task.user.id == user.id) { %>
@@ -39,7 +39,7 @@
           <h2><%= task.title %></h2>
           <p>
             Assign: <%= task.user.username %> <img src="<%= task.user.avatar ?
-            "/upload/"+task.user.avatar:"/assets/avatar.png" %>" alt="Avatar for
+            "/avatar/"+task.user.avatar:"/assets/avatar.png" %>" alt="Avatar for
             user <%= task.user.username %>">
           </p>
           <% if (task.user.id == user.id) { %>

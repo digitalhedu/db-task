@@ -12,6 +12,7 @@ app.set("views", "./views");
 // Aplication Middleware
 const path = require("path");
 app.use(express.static(path.resolve(__dirname, "public")));
+app.use(express.static(path.resolve(__dirname, "uploads")));
 
 app.use(express.json());
 
