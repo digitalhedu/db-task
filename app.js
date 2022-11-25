@@ -37,4 +37,6 @@ app.use(require("./middlewares/user"));
 
 app.use(require("./routes/user.routes"));
 
-app.use("/tasks", require("./routes/task.routes"));
+const isLogged = require("./middlewares/isLogged");
+
+app.use("/tasks", isLogged, require("./routes/task.routes"));
