@@ -26,6 +26,10 @@ module.exports = (Sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: false,
     },
+    avatar: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
   };
   let options = {
     underscored: false,

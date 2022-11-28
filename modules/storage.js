@@ -6,16 +6,21 @@ const filename = (req, file, cb) => {
   newFile += "-";
   newFile += Date.now();
   newFile += path.extname(file.originalname);
-  cb(null, newFile);
+  return cb(null, newFile);
 };
 
 const destination = (req, file, cb) => {
   let folder = path.resolve(__dirname, "../uploads", file.fieldname);
-  if (!fs.existsSync(folder)) {
-    fs.mkdirSync(folder);
+  let exist = fs.existsSync(folder);
+  if (!exist) {
+    fs.mkdirSync(folder, { recursive: true });
   }
   return cb(null, folder);
 };
-const storage = multer.diskStorage({ filename, destination });
+
+const storage = multer.diskStorage({
+  destination: destination,
+  filename: filename,
+});
 
 module.exports = storage;
